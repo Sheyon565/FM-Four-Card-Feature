@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color */
+    /* || Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* || Neutral */
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --body-font: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 15px;
+    padding: 1.5rem;
+    color: var(--grey-500);
+    background-color: var(--white);
+}
+
+.cyan {
+    border-top: 4px solid var(--cyan);
+}
+
+.red {
+    border-top: 4px solid var(--red);
+}
+
+.orange {
+    border-top: 4px solid var(--orange);
+}
+
+.blue {
+    border-top: 4px solid var(--blue);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 1.5rem 0 3rem;
+}
+
+.header__title {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+.header__comName {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.header__desc {
+    font-weight: 400;
+    padding: 0 0.5rem;
+    max-width: 550px;
+}
+
+.card__section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.card__container {
+    border-radius: 0.4rem;
+    box-shadow: 0 5px 10px var(--grey-400);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 20.5rem;
+}
+
+.card__icon {
+    margin: 1.5rem 0 1rem;
+    align-self: flex-end;
+}
+
+@media (min-width: 48em) {
+    .card__section {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+@media (min-width: 64em) {
+    .card__section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "cyan red blue"
+            "cyan orange blue";
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .cyan {
+        grid-area: cyan;
+    }
+
+    .red {
+        grid-area: red;
+    }
+
+    .orange {
+        grid-area: orange;
+    }
+
+    .blue {
+        grid-area: blue;
+    }
+}
